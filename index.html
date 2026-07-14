@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #fde8f2 0%, #dbeeff 100%);
+            background: linear-gradient(135deg, #f5e6d3 0%, #ead1d1 100%);
         }
 
         .container {
@@ -40,7 +40,7 @@
         }
 
         canvas {
-            border: 4px solid #f4a7c3;
+            border: 4px solid #d4a574;
             background: #fffdf7;
             border-radius: 8px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -61,7 +61,7 @@
         }
 
         .score-label {
-            color: #6b9fd4;
+            color: #667eea;
             font-size: 0.9em;
             font-weight: 600;
             text-transform: uppercase;
@@ -77,7 +77,7 @@
 
         .divider {
             height: 2px;
-            background: linear-gradient(90deg, #f4a7c3, transparent);
+            background: linear-gradient(90deg, #667eea, transparent);
             margin: 20px 0;
         }
 
@@ -86,7 +86,7 @@
         }
 
         .controls h3 {
-            color: #6b9fd4;
+            color: #667eea;
             font-size: 0.9em;
             margin-bottom: 12px;
             text-transform: uppercase;
@@ -95,7 +95,7 @@
 
         .key {
             display: inline-block;
-            background: #f4a7c3;
+            background: #667eea;
             color: white;
             padding: 4px 8px;
             border-radius: 4px;
@@ -124,13 +124,13 @@
         }
 
         .btn-start {
-            background: linear-gradient(135deg, #ffb6d9, #ffa5c8);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
         }
 
         .btn-start:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(244, 167, 195, 0.4);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
         }
 
         .btn-start:active {
@@ -138,14 +138,14 @@
         }
 
         .btn-reset {
-            background: #ffb366;
+            background: #e74c3c;
             color: white;
         }
 
         .btn-reset:hover {
-            background: #ff9e4d;
+            background: #c0392b;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 179, 102, 0.4);
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
         }
 
         .status {
@@ -154,7 +154,6 @@
             border-radius: 6px;
             font-weight: 600;
             font-size: 0.95em;
-            text-align: center;
         }
 
         .status.playing {
@@ -290,8 +289,8 @@
         }
 
         function getRandomColor() {
-            const pastelShades = ['#ffb6d9', '#ffa5c8', '#ffc1e0', '#ffb3d9', '#ffa0c8'];
-            return pastelShades[Math.floor(Math.random() * pastelShades.length)];
+            const pinkShades = ['#ff69b4', '#ff99cc', '#ff88dd', '#ff77dd', '#ff88cc'];
+            return pinkShades[Math.floor(Math.random() * pinkShades.length)];
         }
 
         function generateFood() {
@@ -337,11 +336,11 @@
                 );
 
                 if (index === 0) {
-                    gradient.addColorStop(0, '#ffb6d9');
-                    gradient.addColorStop(1, '#ffa5c8');
+                    gradient.addColorStop(0, '#ff69b4');
+                    gradient.addColorStop(1, '#ff1493');
                 } else {
-                    gradient.addColorStop(0, '#ffc1e0');
-                    gradient.addColorStop(1, '#ffb6d9');
+                    gradient.addColorStop(0, '#ff99cc');
+                    gradient.addColorStop(1, '#ff69b4');
                 }
 
                 ctx.fillStyle = gradient;
@@ -354,7 +353,7 @@
             });
 
             // Draw food
-            ctx.fillStyle = '#ffb366';
+            ctx.fillStyle = '#ff8c00';
             ctx.beginPath();
             ctx.arc(
                 (food.x + 0.5) * GRID_SIZE,

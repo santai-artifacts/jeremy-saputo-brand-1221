@@ -350,6 +350,59 @@
                     GRID_SIZE - 2,
                     GRID_SIZE - 2
                 );
+
+                // Draw eyes on head
+                if (index === 0) {
+                    ctx.fillStyle = 'white';
+                    const eyeSize = 2.5;
+                    const eyeOffsetX = 5;
+                    const eyeOffsetY = 5;
+
+                    // Left eye
+                    ctx.beginPath();
+                    ctx.arc(
+                        segment.x * GRID_SIZE + eyeOffsetX,
+                        segment.y * GRID_SIZE + eyeOffsetY,
+                        eyeSize,
+                        0,
+                        Math.PI * 2
+                    );
+                    ctx.fill();
+
+                    // Right eye
+                    ctx.beginPath();
+                    ctx.arc(
+                        segment.x * GRID_SIZE + GRID_SIZE - eyeOffsetX,
+                        segment.y * GRID_SIZE + eyeOffsetY,
+                        eyeSize,
+                        0,
+                        Math.PI * 2
+                    );
+                    ctx.fill();
+
+                    // Pupils
+                    ctx.fillStyle = '#333';
+                    const pupilSize = 1.5;
+                    ctx.beginPath();
+                    ctx.arc(
+                        segment.x * GRID_SIZE + eyeOffsetX,
+                        segment.y * GRID_SIZE + eyeOffsetY,
+                        pupilSize,
+                        0,
+                        Math.PI * 2
+                    );
+                    ctx.fill();
+
+                    ctx.beginPath();
+                    ctx.arc(
+                        segment.x * GRID_SIZE + GRID_SIZE - eyeOffsetX,
+                        segment.y * GRID_SIZE + eyeOffsetY,
+                        pupilSize,
+                        0,
+                        Math.PI * 2
+                    );
+                    ctx.fill();
+                }
             });
 
             // Draw food

@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f5e6d3 0%, #ead1d1 100%);
         }
 
         .container {
@@ -40,8 +40,8 @@
         }
 
         canvas {
-            border: 4px solid white;
-            background: #111;
+            border: 4px solid #d4a574;
+            background: #fffdf7;
             border-radius: 8px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             display: block;
@@ -288,6 +288,11 @@
             draw();
         }
 
+        function getRandomColor() {
+            const pinkShades = ['#ff69b4', '#ff99cc', '#ff88dd', '#ff77dd', '#ff88cc'];
+            return pinkShades[Math.floor(Math.random() * pinkShades.length)];
+        }
+
         function generateFood() {
             let newFood;
             let valid = false;
@@ -303,11 +308,11 @@
 
         function draw() {
             // Clear canvas
-            ctx.fillStyle = '#111';
+            ctx.fillStyle = '#fffdf7';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             // Draw grid
-            ctx.strokeStyle = '#222';
+            ctx.strokeStyle = '#e8e0d5';
             ctx.lineWidth = 0.5;
             for (let i = 0; i <= TILE_COUNT; i++) {
                 ctx.beginPath();
@@ -331,11 +336,11 @@
                 );
 
                 if (index === 0) {
-                    gradient.addColorStop(0, '#4ade80');
-                    gradient.addColorStop(1, '#22c55e');
+                    gradient.addColorStop(0, '#ff69b4');
+                    gradient.addColorStop(1, '#ff1493');
                 } else {
-                    gradient.addColorStop(0, '#86efac');
-                    gradient.addColorStop(1, '#4ade80');
+                    gradient.addColorStop(0, '#ff99cc');
+                    gradient.addColorStop(1, '#ff69b4');
                 }
 
                 ctx.fillStyle = gradient;
@@ -348,7 +353,7 @@
             });
 
             // Draw food
-            ctx.fillStyle = '#ff6b6b';
+            ctx.fillStyle = '#ff8c00';
             ctx.beginPath();
             ctx.arc(
                 (food.x + 0.5) * GRID_SIZE,
